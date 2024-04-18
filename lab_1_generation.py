@@ -259,11 +259,10 @@ def IncidenceMatrix(graph: Graph, NeedToPrint: bool = False):
 
 
 if __name__ == "__main__":
-    # dir_path = os.path.dirname(os.path.realpath(__file__))
-    # file_path = os.path.join(dir_path,"settings.txt")
-    # gh = GenerateGraph(file_path)
-    with open("data.pkl", "rb") as inp:
-        gh = pickle.load(inp)
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    file_path = os.path.join(dir_path,"settings.txt")
+    gh = GenerateGraph(file_path)
+    
     print("Матрица смежности вершин")
     AdjacencyMatrix(gh, True)
     print("\nПараллельные ребра")
