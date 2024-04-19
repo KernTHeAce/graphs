@@ -69,10 +69,12 @@ if path is not None:
     print(
         "Shortest path from vertex", start_vertex, "to vertex", end_vertex, "is:", path
     )
+    print(f"Len: {distances[end_vertex]}")
     distances, previous = dijkstra(gh, start_vertex, False)
     path = reconstruct_path(previous, start_vertex, end_vertex)
     print(
         "Longest path from vertex", start_vertex, "to vertex", end_vertex, "is:", path
     )
+    print(f"Len: {100_000 - (distances[end_vertex] % 100_000)}")
 else:
     print("There is no path from vertex", start_vertex, "to vertex", end_vertex)
